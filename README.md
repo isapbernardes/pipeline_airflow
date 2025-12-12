@@ -27,9 +27,9 @@ Este projeto vai além do básico, implementando soluções para problemas reais
 * Configuração manual de **Security Groups** na AWS e tunelamento para acesso seguro ao banco de dados.
 
 ### 3. Governança e Transformação (dbt)
-* **Separação de Ambientes:** Implementação de arquitetura profissional separando o ambiente de desenvolvimento (schemas pessoais) do ambiente de produção (`ANALYTIC`).
-* **Automação via dbt Cloud:** Configuração de Jobs agendados na nuvem para atualizar as regras de negócio e materializar as tabelas Fato e Dimensão automaticamente após a carga do Airflow.
-* **Testes de Qualidade:** Aplicação de testes (`unique`, `not_null`) e testes de regras de negócio personalizadas (Singular Tests) para garantir que vendas fora do padrão sejam identificadas.
+* **Ambiente Cloud:** Utilização do dbt Cloud para orquestrar as transformações de dados, garantindo que o processamento ocorra em um ambiente controlado fora da máquina local.
+* **Execução de Pipelines:** Configuração de Jobs de Deploy para materializar as tabelas Fato e Dimensão no Data Warehouse (Schema `ANALYTIC`).
+* **Testes de Regra de Negócio:** Implementação de testes personalizados (*Singular Tests*) utilizando SQL e Jinja para auditar a integridade financeira das vendas (ex: verificar descontos acima do permitido).
 
 ---
 
